@@ -2,7 +2,10 @@
 const express = require("express");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const port = 3000;
+const encrypt = require("mongoose-encryption");
+const dotenv = require("dotenv/config");
+
+// const port = 3000;
 
 const app = express();
 
@@ -65,6 +68,6 @@ app.post("/login", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server started on port ${process.env.PORT}`);
 });
